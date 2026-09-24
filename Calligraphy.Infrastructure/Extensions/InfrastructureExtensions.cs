@@ -30,6 +30,7 @@ public static class InfrastructureExtensions
         services.AddScoped<IWishlistRepository, WishlistRepository>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<IAddressRepository, AddressRepository>();
+        services.AddScoped<IInquiryRepository, InquiryRepository>();
 
 
         // Application Services
@@ -40,6 +41,7 @@ public static class InfrastructureExtensions
         services.AddScoped<IWishlistService, WishlistService>();
         services.AddScoped<ICategoryService, CategoryService>();
         services.AddScoped<IAddressService, AddressService>();
+        services.AddScoped<IInquiryService, InquiryService>();
 
         // Infrastructure Services
         services.AddScoped<IAuthService, AuthService>();

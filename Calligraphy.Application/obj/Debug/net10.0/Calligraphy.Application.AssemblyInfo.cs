@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Calligraphy.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94c1f6b96158463af29649867392cf52360cdb09")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22df9cf7828939ba2fab6f0d31661e9e4117a520")]
 [assembly: System.Reflection.AssemblyProductAttribute("Calligraphy.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Calligraphy.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
