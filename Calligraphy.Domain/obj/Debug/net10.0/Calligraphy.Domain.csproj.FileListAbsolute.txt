@@ -1,0 +1,12 @@
+C:\Users\Sana\source\repos\Calligraphy.Domain\bin\Debug\net10.0\Calligraphy.Domain.deps.json
+C:\Users\Sana\source\repos\Calligraphy.Domain\bin\Debug\net10.0\Calligraphy.Domain.dll
+C:\Users\Sana\source\repos\Calligraphy.Domain\bin\Debug\net10.0\Calligraphy.Domain.pdb
+C:\Users\Sana\source\repos\Calligraphy.Domain\obj\Debug\net10.0\Calligraphy.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sana\source\repos\Calligraphy.Domain\obj\Debug\net10.0\Calligraphy.Domain.AssemblyInfoInputs.cache
+C:\Users\Sana\source\repos\Calligraphy.Domain\obj\Debug\net10.0\Calligraphy.Domain.AssemblyInfo.cs
+C:\Users\Sana\source\repos\Calligraphy.Domain\obj\Debug\net10.0\Calligraphy.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Sana\source\repos\Calligraphy.Domain\obj\Debug\net10.0\Calligraphy.Domain.sourcelink.json
+C:\Users\Sana\source\repos\Calligraphy.Domain\obj\Debug\net10.0\Calligraphy.Domain.dll
+C:\Users\Sana\source\repos\Calligraphy.Domain\obj\Debug\net10.0\refint\Calligraphy.Domain.dll
+C:\Users\Sana\source\repos\Calligraphy.Domain\obj\Debug\net10.0\Calligraphy.Domain.pdb
+C:\Users\Sana\source\repos\Calligraphy.Domain\obj\Debug\net10.0\ref\Calligraphy.Domain.dll

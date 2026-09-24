@@ -1,0 +1,16 @@
+C:\Users\Sana\source\repos\Calligraphy.Application\bin\Debug\net10.0\Calligraphy.Application.deps.json
+C:\Users\Sana\source\repos\Calligraphy.Application\bin\Debug\net10.0\Calligraphy.Application.dll
+C:\Users\Sana\source\repos\Calligraphy.Application\bin\Debug\net10.0\Calligraphy.Application.pdb
+C:\Users\Sana\source\repos\Calligraphy.Application\bin\Debug\net10.0\Calligraphy.Domain.dll
+C:\Users\Sana\source\repos\Calligraphy.Application\bin\Debug\net10.0\Calligraphy.Domain.pdb
+C:\Users\Sana\source\repos\Calligraphy.Application\obj\Debug\net10.0\Calligraphy.Application.csproj.AssemblyReference.cache
+C:\Users\Sana\source\repos\Calligraphy.Application\obj\Debug\net10.0\Calligraphy.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sana\source\repos\Calligraphy.Application\obj\Debug\net10.0\Calligraphy.Application.AssemblyInfoInputs.cache
+C:\Users\Sana\source\repos\Calligraphy.Application\obj\Debug\net10.0\Calligraphy.Application.AssemblyInfo.cs
+C:\Users\Sana\source\repos\Calligraphy.Application\obj\Debug\net10.0\Calligraphy.Application.csproj.CoreCompileInputs.cache
+C:\Users\Sana\source\repos\Calligraphy.Application\obj\Debug\net10.0\Calligraphy.Application.sourcelink.json
+C:\Users\Sana\source\repos\Calligraphy.Application\obj\Debug\net10.0\Calligra.B2824FF1.Up2Date
+C:\Users\Sana\source\repos\Calligraphy.Application\obj\Debug\net10.0\Calligraphy.Application.dll
+C:\Users\Sana\source\repos\Calligraphy.Application\obj\Debug\net10.0\refint\Calligraphy.Application.dll
+C:\Users\Sana\source\repos\Calligraphy.Application\obj\Debug\net10.0\Calligraphy.Application.pdb
+C:\Users\Sana\source\repos\Calligraphy.Application\obj\Debug\net10.0\ref\Calligraphy.Application.dll
