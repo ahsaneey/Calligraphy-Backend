@@ -34,6 +34,30 @@ namespace Calligraphy.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            //carrt -> user   one to one 
+            modelBuilder.Entity<Cart>()
+                .HasOne(c => c.User)
+                .WithOne()
+                .HasForeignKey<Cart>(c => c.UserId)
+                .OnDelete(DeleteBehavior.Cascade);//delete user -> delt cart
+
+            // one user 1 cart
+            modelBuilder.Entity<Cart>()
+                 .HasIndex(c => c.UserId)
+                 .IsUnique();
+
+            modelBuilder.Entity<CartItem>()
+                .HasOne(ci => ci.Cart)
+                .WithMany(c => c.CartItems)// one to many
+                .HasForeignKey(ci => ci.CartId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            //cartitem -> product
+            modelBuilder.Entity<CartItem>()
+                  .HasOne(ci => ci.Product)
+                  .WithMany()
+                  .HasForeignKey(ci => ci.ProductId)
+                  .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Product>()
                 .Property(p => p.Price)
@@ -54,12 +78,21 @@ namespace Calligraphy.Infrastructure.Data
                .HasForeignKey(w => w.UserId)
                .OnDelete(DeleteBehavior.Cascade);
 
-            // wishlistitem -> wishlsit
+            // wishlistitem -> product
             modelBuilder.Entity<WishlistItem>()
               .HasOne(wi => wi.Product)
               .WithMany()
               .HasForeignKey(wi => wi.ProductId)
-             .OnDelete(DeleteBehavior.Cascade);
+             .OnDelete(DeleteBehavior.Restrict);
+
+
+            //wishlstitem ->  wishlist
+            modelBuilder.Entity<WishlistItem>()
+               .HasOne(wi => wi.Wishlist)
+               .WithMany(w => w.WishlistItems)
+               .HasForeignKey(wi => wi.WishlistId)
+               .OnDelete(DeleteBehavior.Cascade);
+
 
             // same prdtct cant added twice
             modelBuilder.Entity<WishlistItem>()
@@ -72,7 +105,28 @@ namespace Calligraphy.Infrastructure.Data
                .HasForeignKey(p => p.CategoryId)
                .OnDelete(DeleteBehavior.Restrict);
 
-           modelBuilder.Entity<Category>().HasData(
+            // oreder->orderitem
+
+            modelBuilder.Entity<OrderItem>()
+                .HasOne(oi => oi.Order)
+                .WithMany(o => o.OrderItems)
+                .HasForeignKey(oi => oi.OrderId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Order>()
+                 .HasOne(o => o.User)
+                 .WithMany()
+                 .HasForeignKey(o => o.UserId)
+                 .OnDelete(DeleteBehavior.Restrict);
+
+            //orderitem -> product
+            modelBuilder.Entity<OrderItem>()
+                .HasOne(oi => oi.Product)
+                 .WithMany()
+                 .HasForeignKey(oi => oi.ProductId)
+                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Category>().HasData(
                  new Category
                  {
                       Id = 1,
