@@ -14,6 +14,7 @@ public class Order
 
     public User User { get; set; } = null!;
     public string ShippingAddress { get; set; } = string.Empty;
+    public Payment? Payment { get; set; }
 
     public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 }

@@ -33,6 +33,8 @@ namespace Calligraphy.Infrastructure.Data
 
         public DbSet<Inquiry> Inquiries { get; set; }
 
+        public DbSet<Payment> Payments { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -127,6 +129,16 @@ namespace Calligraphy.Infrastructure.Data
                  .WithMany()
                  .HasForeignKey(oi => oi.ProductId)
                  .OnDelete(DeleteBehavior.Restrict);
+
+
+            modelBuilder.Entity<Payment>()
+                .HasOne(p => p.Order)
+                .WithOne(o => o.Payment)
+                .HasForeignKey<Payment>(p => p.OrderId);
+
+            modelBuilder.Entity<Payment>()
+                 .Property(p => p.Amount)
+                 .HasPrecision(18, 2);
 
             modelBuilder.Entity<Category>().HasData(
                  new Category
