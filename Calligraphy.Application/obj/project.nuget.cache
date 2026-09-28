@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "xAWrMMTm/MQ=",
+  "dgSpecHash": "f8jMoCpw7Xs=",
   "success": true,
   "projectFilePath": "C:\\Users\\Sana\\source\\repos\\Calligraphy.Application\\Calligraphy.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Sana\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.12\\microsoft.extensions.dependencyinjection.abstractions.10.0.12.nupkg.sha512",
+    "C:\\Users\\Sana\\.nuget\\packages\\microsoft.extensions.options\\10.0.12\\microsoft.extensions.options.10.0.12.nupkg.sha512",
+    "C:\\Users\\Sana\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.12\\microsoft.extensions.primitives.10.0.12.nupkg.sha512",
+    "C:\\Users\\Sana\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Sana\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
+    "C:\\Users\\Sana\\.nuget\\packages\\razorpay\\3.3.2\\razorpay.3.3.2.nupkg.sha512"
+  ],
   "logs": []
 }

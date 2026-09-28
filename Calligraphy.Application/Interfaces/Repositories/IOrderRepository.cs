@@ -10,5 +10,11 @@ public interface IOrderRepository
 
     Task<List<Order>> GetOrdersByUserIdAsync(int userId);
 
+    Task<List<Order>> GetAllOrdersAsync();
+
+    Task<int> GetOrderCountAsync();
+
+    Task<int> GetPendingOrderCountAsync();
+
     Task SaveChangesAsync();
 }

@@ -1073,7 +1073,7 @@
       "Newtonsoft.Json/13.0.4": {
         "type": "package",
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
@@ -1081,6 +1081,32 @@
           "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Portable.BouncyCastle/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Razorpay/3.3.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "Portable.BouncyCastle": "1.9.0"
+        },
+        "compile": {
+          "lib/net8.0/Razorpay.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Razorpay.dll": {}
         }
       },
       "System.ClientModel/1.8.0": {
@@ -1347,7 +1373,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Calligraphy.Domain": "1.0.0"
+          "Calligraphy.Domain": "1.0.0",
+          "Microsoft.Extensions.Options": "10.0.12",
+          "Razorpay": "3.3.2"
         },
         "compile": {
           "bin/placeholder/Calligraphy.Application.dll": {}
@@ -3491,6 +3519,38 @@
         "newtonsoft.json.13.0.4.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "Portable.BouncyCastle/1.9.0": {
+      "sha512": "eZZBCABzVOek+id9Xy04HhmgykF0wZg9wpByzrWN7q8qEI0Qen9b7tfd7w8VA3dOeesumMG7C5ZPy0jk7PSRHw==",
+      "type": "package",
+      "path": "portable.bouncycastle/1.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/BouncyCastle.Crypto.dll",
+        "lib/net40/BouncyCastle.Crypto.xml",
+        "lib/netstandard2.0/BouncyCastle.Crypto.dll",
+        "lib/netstandard2.0/BouncyCastle.Crypto.xml",
+        "portable.bouncycastle.1.9.0.nupkg.sha512",
+        "portable.bouncycastle.nuspec"
+      ]
+    },
+    "Razorpay/3.3.2": {
+      "sha512": "t/BFZKYuCZI/if927DrG122ARokL3lAlRhf0PVUjhNFGqjbXc0o32zTOUPF+1Fz9izBoTMdoYn8wVL91Z76Mjg==",
+      "type": "package",
+      "path": "razorpay/3.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net47/Razorpay.dll",
+        "lib/net48/Razorpay.dll",
+        "lib/net6.0/Razorpay.dll",
+        "lib/net8.0/Razorpay.dll",
+        "lib/netstandard2.0/Razorpay.dll",
+        "razorpay.3.3.2.nupkg.sha512",
+        "razorpay.nuspec"
       ]
     },
     "System.ClientModel/1.8.0": {

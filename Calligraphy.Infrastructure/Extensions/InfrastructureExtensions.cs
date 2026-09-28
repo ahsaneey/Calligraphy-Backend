@@ -31,6 +31,7 @@ public static class InfrastructureExtensions
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<IAddressRepository, AddressRepository>();
         services.AddScoped<IInquiryRepository, InquiryRepository>();
+        services.AddScoped<IPaymentRepository, PaymentRepository>();
 
 
         // Application Services
@@ -38,10 +39,14 @@ public static class InfrastructureExtensions
         services.AddScoped<IProductService, ProductService>();
         services.AddScoped<ICartService, CartService>();
         services.AddScoped<IOrderService, OrderService>();
+        services.AddScoped<IPaymentService, PaymentService>();
         services.AddScoped<IWishlistService, WishlistService>();
         services.AddScoped<ICategoryService, CategoryService>();
         services.AddScoped<IAddressService, AddressService>();
         services.AddScoped<IInquiryService, InquiryService>();
+
+        services.AddScoped<AdminDashboardService>();
+
 
         // Infrastructure Services
         services.AddScoped<IAuthService, AuthService>();

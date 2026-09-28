@@ -36,6 +36,26 @@ public class OrderRepository : IOrderRepository
             .ToListAsync();
     }
 
+    public async Task<List<Order>> GetAllOrdersAsync()
+    {
+        return await _context.Orders
+            .Include(o => o.OrderItems)
+            .ThenInclude(oi => oi.Product)
+            .OrderByDescending(o => o.CreatedAt)
+            .ToListAsync();
+    }
+
+    public async Task<int> GetOrderCountAsync()
+    {
+        return await _context.Orders.CountAsync();
+    }
+
+    public async Task<int> GetPendingOrderCountAsync()
+    {
+        return await _context.Orders
+            .CountAsync(o => o.Status == "Pending");
+    }
+
     public async Task SaveChangesAsync()
     {
         await _context.SaveChangesAsync();
