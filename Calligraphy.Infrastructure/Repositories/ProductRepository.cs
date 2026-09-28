@@ -16,11 +16,21 @@ public class ProductRepository : IProductRepository
     public async Task<Product?> GetByIdAsync(int id)
     {
         return await _context.Products
-            .FirstOrDefaultAsync(p => p.Id == id);
+            .FirstOrDefaultAsync(p =>
+                p.Id == id &&
+                !p.IsDeleted);
     }
+
     public async Task<List<Product>> GetAllAsync()
     {
         return await _context.Products
+            .Where(p => !p.IsDeleted)
+            .ToListAsync();
+    }
+    public async Task<List<Product>> GetAllForAdminAsync()
+    {
+        return await _context.Products
+            .OrderByDescending(p => p.Id)
             .ToListAsync();
     }
 
@@ -37,9 +47,21 @@ public class ProductRepository : IProductRepository
 
     public async Task DeleteAsync(Product product)
     {
-        _context.Products.Remove(product);
+        product.IsDeleted = true;
+        _context.Products.Update(product);
     }
 
+    public async Task RestoreAsync(Product product)
+    {
+        product.IsDeleted = false;
+
+        _context.Products.Update(product);
+    }
+
+    public async Task HardDeleteAsync(Product product)
+    {
+        _context.Products.Remove(product);
+    }
 
     public async Task SaveChangesAsync()
     {

@@ -8,11 +8,17 @@ public interface IProductRepository
 
     Task<List<Product>> GetAllAsync();
 
+    Task<List<Product>> GetAllForAdminAsync();
+
     Task AddAsync(Product product);
 
     Task UpdateAsync(Product product);
 
     Task DeleteAsync(Product product);
+
+    Task RestoreAsync(Product product);
+
+    Task HardDeleteAsync(Product product);
 
     Task SaveChangesAsync();
 }

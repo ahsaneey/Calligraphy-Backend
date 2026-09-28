@@ -24,6 +24,11 @@ public class ProductService : IProductService
         return await _productRepository.GetAllAsync();
     }
 
+    public async Task<List<Product>> GetAllForAdminAsync()
+    {
+        return await _productRepository.GetAllForAdminAsync();
+    }
+
     public async Task<Product> CreateAsync(Product product)
     {
         await _productRepository.AddAsync(product);
@@ -59,6 +64,32 @@ public class ProductService : IProductService
             return false;
 
         await _productRepository.DeleteAsync(product);
+        await _productRepository.SaveChangesAsync();
+
+        return true;
+    }
+    public async Task<bool> HardDeleteAsync(int id)
+    {
+        var product = await _productRepository.GetByIdAsync(id);
+
+        if (product == null)
+            return false;
+
+        await _productRepository.HardDeleteAsync(product);
+        await _productRepository.SaveChangesAsync();
+
+        return true;
+    }
+    public async Task<bool> RestoreAsync(int id)
+    {
+        var products = await _productRepository.GetAllForAdminAsync();
+
+        var product = products.FirstOrDefault(p => p.Id == id);
+
+        if (product == null)
+            return false;
+
+        await _productRepository.RestoreAsync(product);
         await _productRepository.SaveChangesAsync();
 
         return true;
