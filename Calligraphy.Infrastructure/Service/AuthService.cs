@@ -66,6 +66,11 @@ public class AuthService : IAuthService
             return null;
         }
 
+        if (user.IsBlocked)
+        {
+            return null;
+        }
+
         var token = _jwtService.GenerateToken(user);
 
         return new AuthResponse

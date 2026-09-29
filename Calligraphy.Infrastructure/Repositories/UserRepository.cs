@@ -29,12 +29,38 @@ public class UserRepository : IUserRepository
     public async Task<List<User>> GetAllAsync()
     {
         return await _context.Users
-            .ToListAsync();
+        .Where(u => u.Role != "Admin")
+        .ToListAsync();
     }
 
     public async Task AddAsync(User user)
     {
         await _context.Users.AddAsync(user);
+    }
+    public async Task<bool> BlockAsync(int id)
+    {
+        var user = await _context.Users
+            .FirstOrDefaultAsync(u => u.Id == id && u.Role != "Admin");
+
+        if (user == null)
+            return false;
+
+        user.IsBlocked = true;
+
+        return true;
+    }
+
+    public async Task<bool> UnblockAsync(int id)
+    {
+        var user = await _context.Users
+            .FirstOrDefaultAsync(u => u.Id == id && u.Role != "Admin");
+
+        if (user == null)
+            return false;
+
+        user.IsBlocked = false;
+
+        return true;
     }
 
     public async Task SaveChangesAsync()

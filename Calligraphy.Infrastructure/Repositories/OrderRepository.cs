@@ -36,11 +36,19 @@ public class OrderRepository : IOrderRepository
             .ToListAsync();
     }
 
-    public async Task<List<Order>> GetAllOrdersAsync()
+    public async Task<List<Order>> GetAllOrdersAsync(string? status = null)
     {
-        return await _context.Orders
+        var query = _context.Orders
             .Include(o => o.OrderItems)
             .ThenInclude(oi => oi.Product)
+            .AsQueryable();
+
+        if (!string.IsNullOrEmpty(status))
+        {
+            query = query.Where(o => o.Status == status);
+        }
+
+        return await query
             .OrderByDescending(o => o.CreatedAt)
             .ToListAsync();
     }

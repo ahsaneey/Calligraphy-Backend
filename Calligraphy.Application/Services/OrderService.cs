@@ -82,9 +82,10 @@ public class OrderService : IOrderService
         return await _orderRepository
             .GetOrdersByUserIdAsync(userId);
     }
-    public async Task<List<Order>> GetAllOrdersAsync()
+    public async Task<List<Order>> GetAllOrdersAsync(string? status = null)
     {
-        return await _orderRepository.GetAllOrdersAsync();
+        return await _orderRepository
+            .GetAllOrdersAsync(status);
     }
     public async Task<bool> UpdateOrderStatusAsync(int id,string status)
     {

@@ -11,7 +11,7 @@ public interface IOrderService
 
     Task<List<Order>> GetOrdersByUserIdAsync(int userId);
 
-    Task<List<Order>> GetAllOrdersAsync();
+    Task<List<Order>> GetAllOrdersAsync(string? status = null);
 
     Task<bool> UpdateOrderStatusAsync(int id, string status);
 }

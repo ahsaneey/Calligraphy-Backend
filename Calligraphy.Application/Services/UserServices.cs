@@ -30,4 +30,32 @@ public class UserService : IUserService
 
         return user;
     }
+    public async Task<List<User>> GetAllAsync()
+    {
+        return await _userRepository.GetAllAsync();
+    }
+    public async Task<bool> BlockAsync(int id)
+    {
+        var blocked = await _userRepository.BlockAsync(id);
+
+        if (!blocked)
+            return false;
+
+        await _userRepository.SaveChangesAsync();
+
+        return true;
+    }
+
+    public async Task<bool> UnblockAsync(int id)
+    {
+        var unblocked = await _userRepository.UnblockAsync(id);
+
+        if (!unblocked)
+            return false;
+
+        await _userRepository.SaveChangesAsync();
+
+        return true;
+    }
+
 }

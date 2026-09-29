@@ -10,7 +10,7 @@ public interface IOrderRepository
 
     Task<List<Order>> GetOrdersByUserIdAsync(int userId);
 
-    Task<List<Order>> GetAllOrdersAsync();
+    Task<List<Order>> GetAllOrdersAsync(string? status = null);
 
     Task<int> GetOrderCountAsync();
 

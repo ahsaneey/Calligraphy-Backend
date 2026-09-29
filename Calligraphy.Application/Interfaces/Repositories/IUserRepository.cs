@@ -17,5 +17,8 @@ public interface IUserRepository
 
     Task AddAsync(User user);
 
+    Task<bool> BlockAsync(int id);
+    Task<bool> UnblockAsync(int id);
+
     Task SaveChangesAsync();
 }
