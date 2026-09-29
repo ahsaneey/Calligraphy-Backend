@@ -70,7 +70,9 @@ public class ProductService : IProductService
     }
     public async Task<bool> HardDeleteAsync(int id)
     {
-        var product = await _productRepository.GetByIdAsync(id);
+        var products = await _productRepository.GetAllForAdminAsync();
+
+        var product = products.FirstOrDefault(p => p.Id == id);
 
         if (product == null)
             return false;

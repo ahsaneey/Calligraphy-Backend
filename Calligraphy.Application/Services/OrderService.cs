@@ -82,4 +82,20 @@ public class OrderService : IOrderService
         return await _orderRepository
             .GetOrdersByUserIdAsync(userId);
     }
+    public async Task<List<Order>> GetAllOrdersAsync()
+    {
+        return await _orderRepository.GetAllOrdersAsync();
+    }
+    public async Task<bool> UpdateOrderStatusAsync(int id,string status)
+    {
+        var order = await _orderRepository.GetOrderByIdAsync(id);
+        if (order == null)
+            return false;
+
+        order.Status = status;
+        await _orderRepository.SaveChangesAsync();
+        return true;
+
+    }
+
 }
