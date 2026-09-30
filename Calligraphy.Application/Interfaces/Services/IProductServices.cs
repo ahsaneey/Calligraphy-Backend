@@ -11,7 +11,7 @@ public interface IProductService
 
     Task<List<Product>> GetAllForAdminAsync();
 
-    Task<Product> CreateAsync(Product product);
+    Task<Product> CreateAsync(CreateProductDto dto);
 
     Task<Product?> UpdateAsync(int id, ProductUpdateDto dto);
 

@@ -1,14 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "0swswGceIwY=",
+  "dgSpecHash": "YzLX9catlgo=",
   "success": true,
   "projectFilePath": "C:\\Users\\Sana\\source\\repos\\Calligraphy.Infrastructure\\Calligraphy.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sana\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\Sana\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",
     "C:\\Users\\Sana\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\Sana\\.nuget\\packages\\cloudinarydotnet\\1.29.3\\cloudinarydotnet.1.29.3.nupkg.sha512",
     "C:\\Users\\Sana\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Sana\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.12\\microsoft.aspnetcore.authentication.jwtbearer.10.0.12.nupkg.sha512",
+    "C:\\Users\\Sana\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.3.13\\microsoft.aspnetcore.http.abstractions.2.3.13.nupkg.sha512",
+    "C:\\Users\\Sana\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.3.12\\microsoft.aspnetcore.http.features.2.3.12.nupkg.sha512",
     "C:\\Users\\Sana\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\Sana\\.nuget\\packages\\microsoft.bcl.cryptography\\10.0.2\\microsoft.bcl.cryptography.10.0.2.nupkg.sha512",
     "C:\\Users\\Sana\\.nuget\\packages\\microsoft.build.framework\\18.0.2\\microsoft.build.framework.18.0.2.nupkg.sha512",

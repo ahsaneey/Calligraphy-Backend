@@ -51,6 +51,7 @@ public static class InfrastructureExtensions
         // Infrastructure Services
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IJwtService, JwtService>();
+        services.AddScoped<ICloudinaryService, CloudinaryService>();
 
         return services;
     }

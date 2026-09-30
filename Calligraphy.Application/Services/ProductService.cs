@@ -29,8 +29,18 @@ public class ProductService : IProductService
         return await _productRepository.GetAllForAdminAsync();
     }
 
-    public async Task<Product> CreateAsync(Product product)
+    public async Task<Product> CreateAsync(CreateProductDto dto)
     {
+        var product = new Product
+        {
+            Name = dto.Name,
+            Description = dto.Description,
+            Price = dto.Price,
+            ImageUrl = dto.ImageUrl,
+            StockQuantity = dto.StockQuantity,
+            CategoryId = dto.CategoryId
+        };
+
         await _productRepository.AddAsync(product);
         await _productRepository.SaveChangesAsync();
 

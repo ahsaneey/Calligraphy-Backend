@@ -68,7 +68,8 @@ public class AuthService : IAuthService
 
         if (user.IsBlocked)
         {
-            return null;
+            throw new UnauthorizedAccessException("User is blocked.");
+
         }
 
         var token = _jwtService.GenerateToken(user);
