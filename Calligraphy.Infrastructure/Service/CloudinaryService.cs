@@ -5,7 +5,7 @@ using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 
-namespace Calligraphy.Infrastructure.Services;
+namespace Calligraphy.Infrastructure.Service;
 
 public class CloudinaryService : ICloudinaryService
 {

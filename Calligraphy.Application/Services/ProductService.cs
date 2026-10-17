@@ -28,6 +28,32 @@ public class ProductService : IProductService
     {
         return await _productRepository.GetAllForAdminAsync();
     }
+    public async Task<(List<Product> Items, int TotalCount)> GetAdminPagedAsync(
+    string? search, bool showDeleted, int page, int pageSize)
+    {
+        var products = await _productRepository.GetAllForAdminAsync();
+
+        var query = products.Where(p => p.IsDeleted == showDeleted);
+
+        if (!string.IsNullOrWhiteSpace(search))
+        {
+            var term = search.Trim().ToLower();
+            query = query.Where(p =>
+                p.Name.ToLower().Contains(term) ||
+                $"sku-{p.Id}".Contains(term));
+        }
+
+        var totalCount = query.Count();
+
+        var items = query
+            .OrderByDescending(p => p.Id)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+
+        return (items, totalCount);
+    }
+
 
     public async Task<Product> CreateAsync(CreateProductDto dto)
     {

@@ -4,6 +4,7 @@ using Calligraphy.Application.Interfaces.Services;
 using Calligraphy.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Calligraphy.Api.Controllers;
 
@@ -48,16 +49,19 @@ public class AdminProductController : ControllerBase
         );
     }
     [HttpPost]
+    [HttpPost]
     public async Task<IActionResult> Create([FromForm] CreateProductDto dto)
     {
-        var result = await _productService.CreateAsync(dto);
+        try
+        {
+            var product = await _productService.CreateAsync(dto);
 
-        return Ok(
-            ApiResponse<Product>.Ok(
-                result.Product,
-                result.Message
-            )
-        );
+            return Ok(ApiResponse<Product>.Ok(product, "Product created successfully."));
+        }
+        catch (DbUpdateException ex)
+        {
+            return BadRequest(new { message = ex.InnerException?.Message ?? ex.Message });
+        }
     }
 
     [HttpPut("{id}")]

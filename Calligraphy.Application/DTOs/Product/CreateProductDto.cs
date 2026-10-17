@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace Calligraphy.Application.DTOs.Product;
 
@@ -15,10 +16,12 @@ public class CreateProductDto
     [Range(0.01, double.MaxValue)]
     public decimal Price { get; set; }
 
-    public string ImageUrl { get; set; } = string.Empty;
-
     [Range(0, int.MaxValue)]
     public int StockQuantity { get; set; }
 
     public int? CategoryId { get; set; }
+
+    public string? Style { get; set; }
+
+    public IFormFile? Image { get; set; }
 }

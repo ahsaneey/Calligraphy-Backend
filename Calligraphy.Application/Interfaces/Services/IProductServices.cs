@@ -11,6 +11,9 @@ public interface IProductService
 
     Task<List<Product>> GetAllForAdminAsync();
 
+    Task<(List<Product> Items, int TotalCount)> GetAdminPagedAsync(
+    string? search, bool showDeleted, int page, int pageSize);
+
     Task<Product> CreateAsync(CreateProductDto dto);
 
     Task<Product?> UpdateAsync(int id, ProductUpdateDto dto);

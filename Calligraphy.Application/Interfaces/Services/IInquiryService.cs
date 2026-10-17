@@ -11,4 +11,6 @@ public interface IInquiryService
     Task<InquiryDto?> GetInquiryByIdAsync(int id);
 
     Task<bool> UpdateInquiryStatusAsync(int id, string status);
+
+    Task<bool> DeleteInquiryAsync(int id);  
 }
